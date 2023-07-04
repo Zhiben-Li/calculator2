@@ -165,6 +165,7 @@ function App() {
     setNumlist([...numlist, calc]);
     // setScreen(calc);
     setCalc("");
+    setResult(parseFloat(calc));
     setHasDot(false);
   };
 
@@ -184,6 +185,9 @@ function App() {
 
   const memoryRecall = () => {
     handleClick("MR");
+    if (memory === "") {
+      return;
+    }
     setCalc(memory.toString());
   };
 
